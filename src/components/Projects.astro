@@ -1,0 +1,59 @@
+---
+import Angular from "../components/icons/Angular.astro";
+import Bulma from "../components/icons/Bulma.astro";
+import Laravel from "../components/icons/Laravel.astro";
+
+const TAGS = {
+    ANGULAR: {
+        name: "Angular",
+        class: "bg-white/90 text-red-700",
+        icon: Angular
+    }
+    ,LARAVEL: {
+        name: "Laravel",
+        class: "bg-red-300 text-black/90",
+        icon: Laravel
+    }
+    , BULMA: {
+        name: "Bulma",
+        class: "bg-black text-[#00D1B2]",
+        icon: Bulma
+    },
+}
+
+const PROJECTS = [
+    {
+        title: "FoodBudget",
+        description: "Aplicación web para gestionar tu presupuesto de comida. Controla sobras y calorías. Api interna integrada con Laravel.",
+        link: "https://example.com/project1",
+        image: "https://placehold.co/500x300",
+        tags: [TAGS.ANGULAR, TAGS.BULMA, TAGS.LARAVEL],
+    },
+    {
+        title: "Project 2",
+        description: "Description of project 2",
+        link: "https://placehold.co/400",
+        image: "https://placehold.co/400",
+        tags: [TAGS.ANGULAR],
+
+    },
+    // Add more projects as needed
+]
+---
+{    PROJECTS.map(({ title, description, link, image, tags }) => (
+    <article class="pb-24">
+        <h3 class="text-2xl font-semibold text-green-200 mb-2">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 flew-row mb-2">
+            {tags.map(tag => (
+                <li>
+                    <span class={`flex items-center justify-center gap-x-2 rounded-full px-2 py-1 text-sm font-semibold ${tag.class}`}>
+                        <tag.icon />
+                        {tag.name}
+                    </span>
+                </li>
+            ))}
+        </ul>
+        <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}/>    
+    </article>)
+)}

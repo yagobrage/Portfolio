@@ -10,40 +10,52 @@ import Email from '../components/icons/Email.astro';
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
 import SocialBadge from '../components/SocialBadge.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import Code from '../components/icons/Code.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout description="Contrata a yagobrage para crear tu aplicación web. Desarrollador Web y estudiante de ingeniería informática." title="Porfolio de yagobrage - Desarrollador y Programador Web">
-	<main>
+	<main class="px-4 ">
 		
-		<SectionContainer>
+		<SectionContainer class="py-44 pb-24">
 			<Image class="w-28 h-28 mb-4" 
 			src={astronauta} 
 			alt="astronauta" />
 
-			<h1 class="text-white text-5xl font-bold flex flex-row pb-10 gap-x-4">Hey, soy yagobrage 
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row pb-6 lg:pb-10 gap-x-4">Hey, soy yagobrage 
 				<div class="flex justify-center items-center"><a href="https://www.linkedin.com/in/yagobrage/">
 				<Badge>Disponible para trabajar</Badge></a></div>
 			</h1>
 
-			<h2 class="text-xl opacity-90 text-wrap">+1 año de experiencia. <span class="text-blue-200">Desarrollador Web y Estudiante de Ingeniería Informática.</span>
+			<h2 class="text-xl lg:text-2xl opacity-90 text-wrap max-w-[700px]">+1 año de experiencia. <span class="text-blue-200">Desarrollador Web y Estudiante de Ingeniería Informática.</span>
 			<span class="text-green-200">De A Coruña, España 🇪🇸.</span> Especializado en crear apps web únicas.</h2>
 			
-			<nav class="flex gap-x-4">
+			<nav class="flex gap-4 flex-wrap">
 				<SocialBadge href="https://www.linkedin.com/in/yagobrage/">
 					<Linkedin></Linkedin> LinkedIn
 				</SocialBadge>
 				<SocialBadge href="https://github.com/yagobrage">
 					<Github></Github> GitHub
 				</SocialBadge>
-				<SocialBadge href="https://github.com/yagobrage">
+				<SocialBadge href="mailto:yagollanos04@gmail.com">
 					<Email></Email> yagollanos04@gmail.com
 				</SocialBadge>
 			</nav>
 
 		</SectionContainer>
 
-		<SectionContainer>
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl mb-8 flex gap-x-2 items-center font-semibold"> <Briefcase></Briefcase> Experiencia Laboral</h2>
 			<Experience></Experience>
 		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl mb-8 flex gap-x-2 items-center font-semibold"> <Code></Code> Proyectos</h2>
+			<Projects></Projects>
+		</SectionContainer>
+
+
+		
 	</main>
 </Layout>
